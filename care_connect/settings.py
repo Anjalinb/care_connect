@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'staff',
     'staff_v2',
+    'bookings',
 ]
 
 MIDDLEWARE = [

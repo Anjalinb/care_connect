@@ -52,6 +52,7 @@ Authorization: Basic adminuser:admin
 ###
 POST http://127.0.0.1:8000/v2/doctors/
 Content-Type: application/json
+Authorization: Basic adminuser:admin
 
 {
     "name":"hiba",
@@ -65,11 +66,13 @@ Content-Type: application/json
 ###
 GET http://127.0.0.1:8000/v2/doctors/2/
 Accept: application/json
+Authorization: Basic adminuser:admin
 
 #API call for updating a doctor
 ###
 PUT http://127.0.0.1:8000/v2/doctors/4/
 Content-Type: application/json
+Authorization: Basic adminuser:admin
 
 {
     "name":"navami",
@@ -79,10 +82,17 @@ Content-Type: application/json
     "email":"navami@gmail.com"
 }
 
+#API call for deleting a doctor
+###
+DELETE http://127.0.0.1:8000/v2/doctors/5/
+Accept: application/json
+Authorization: Basic adminuser:admin
+
 #API call for creating user
 ###
 POST http://127.0.0.1:8000/v2/admin-register/
 Content-Type: application/json
+
 
 {
     "username":"adminuser",
@@ -90,5 +100,11 @@ Content-Type: application/json
     "password":"admin"
 }
 
+
+
+#API call for listing all appointments
+###
+GET http://127.0.0.1:8000/appointments/
+Accept: application/json
 
 
