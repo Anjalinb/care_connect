@@ -1,0 +1,94 @@
+#API call for listing all doctors
+###
+GET http://127.0.0.1:8000/doctors/
+Accept: application/json
+
+#API call for inserting new doctor
+###
+POST http://127.0.0.1:8000/doctors/
+Content-Type: application/json
+
+{
+    "name":"navami",
+    "specialization":"Dermatology",
+    "fee":1000,
+    "qualification":"mbbs",
+    "email":"navami@gmail.com"
+}
+
+#API call for retrieving doctor details
+###
+GET http://127.0.0.1:8000/doctors/2/
+Accept: application/json
+
+#API call for updating a doctor
+###
+PUT http://127.0.0.1:8000/doctors/4/
+Content-Type: application/json
+
+{
+    "name":"navami",
+    "specialization":"dermatology",
+    "fee":1100,
+    "qualification":"mbbs",
+    "email":"navami@gmail.com"
+}
+
+#API call for deleting a doctor
+###
+DELETE http://127.0.0.1:8000/doctors/3/
+Accept: application/json
+
+#V2 END POINTS
+
+#API call for listing all doctors
+###
+GET http://127.0.0.1:8000/v2/doctors/
+Accept: application/json
+Authorization: Basic adminuser:admin
+
+
+#API call for inserting new doctor
+###
+POST http://127.0.0.1:8000/v2/doctors/
+Content-Type: application/json
+
+{
+    "name":"hiba",
+    "specialization":"dermatology",
+    "fee":700,
+    "qualification":"mbbs",
+    "email":"hiba@gmail.com"
+}
+
+#API call for retrieving doctor details
+###
+GET http://127.0.0.1:8000/v2/doctors/2/
+Accept: application/json
+
+#API call for updating a doctor
+###
+PUT http://127.0.0.1:8000/v2/doctors/4/
+Content-Type: application/json
+
+{
+    "name":"navami",
+    "specialization":"dermatology",
+    "fee":600,
+    "qualification":"mbbs",
+    "email":"navami@gmail.com"
+}
+
+#API call for creating user
+###
+POST http://127.0.0.1:8000/v2/admin-register/
+Content-Type: application/json
+
+{
+    "username":"adminuser",
+    "email":"admin@gmail.com",
+    "password":"admin"
+}
+
+
+
