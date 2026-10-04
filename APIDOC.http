@@ -107,4 +107,17 @@ Content-Type: application/json
 GET http://127.0.0.1:8000/appointments/
 Accept: application/json
 
+#API call for creating new appointment
+###
+POST http://127.0.0.1:8000/appointments/
+Content-Type: application/json
+
+{
+    "patient_name":"sanya",
+    "phone":"9876789765",
+    "doctor":2,
+    "appointment_date":"2025-10-01",
+    "problem":"wheezing"
+}
+
 
