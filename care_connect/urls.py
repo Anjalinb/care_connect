@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from staff.views import DoctorListCreateView,DoctorRetrieveUpdateDeleteView
 from staff_v2 import views
 from bookings.views import AppointmentListCreateView
@@ -30,4 +30,6 @@ urlpatterns = [
     path('v2/admin-register/',views.AdminRegisterView.as_view()),
     #APPOINTMENT ROUTES
     path('appointments/',AppointmentListCreateView.as_view()),
+    #APPLICATION ROUTES
+    path('v2/booking/',include("bookings_v2.urls")),
 ]

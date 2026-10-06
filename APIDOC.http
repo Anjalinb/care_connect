@@ -88,7 +88,7 @@ DELETE http://127.0.0.1:8000/v2/doctors/5/
 Accept: application/json
 Authorization: Basic adminuser:admin
 
-#API call for creating user
+#API call for creating admin user
 ###
 POST http://127.0.0.1:8000/v2/admin-register/
 Content-Type: application/json
@@ -116,8 +116,38 @@ Content-Type: application/json
     "patient_name":"sanya",
     "phone":"9876789765",
     "doctor":2,
-    "appointment_date":"2025-10-01",
+    "appointment_date":"2026-10-08",
     "problem":"wheezing"
+}
+
+#API call for registering new user
+###
+POST http://127.0.0.1:8000/v2/booking/signup/
+Content-Type: application/json
+
+{
+    "username":"django",
+    "password":"django123",
+    "email":"django@gmail.com"
+}
+
+#APPOINTMENTS V2
+#API call for listing all appointments
+###
+GET http://127.0.0.1:8000/v2/booking/appointments/
+Accept: application/json
+
+#API call for creating new appointment
+###
+POST http://127.0.0.1:8000/v2/booking/appointments/
+Content-Type: application/json
+
+{
+    "patient_name":"muhsi ",
+    "phone":"7654789765",
+    "doctor":4,
+    "appointment_date":"2026-10-08",
+    "problem":"cough"
 }
 
 
