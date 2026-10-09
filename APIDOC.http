@@ -136,18 +136,45 @@ Content-Type: application/json
 ###
 GET http://127.0.0.1:8000/v2/booking/appointments/
 Accept: application/json
+Authorization: Basic django:django123
 
 #API call for creating new appointment
 ###
 POST http://127.0.0.1:8000/v2/booking/appointments/
 Content-Type: application/json
+Authorization: Basic django:django123
 
 {
-    "patient_name":"muhsi ",
-    "phone":"7654789765",
+    "patient_name":"sayana ",
+    "phone":"9084789765",
     "doctor":4,
     "appointment_date":"2026-10-08",
-    "problem":"cough"
+    "problem":"sneeing"
 }
 
+#API call for retrieving appointment details
+###
+GET http://127.0.0.1:8000/v2/booking/appointments/1/
+Accept: application/json
+Authorization: Basic django:django123
+
+#API call for updating appointment
+###
+PUT http://127.0.0.1:8000/v2/booking/appointments/6/
+Content-Type: application/json
+Authorization: Basic django:django123
+
+{
+   "patient_name":"sayana ",
+    "phone":"9084789765",
+    "doctor":2,
+    "appointment_date":"2026-10-08",
+    "problem":"sneeing" 
+}
+
+#API call for deleting appointment
+###
+DELETE http://127.0.0.1:8000/v2/booking/appointments/6/
+Accept: application/json
+Authorization: Basic django:django123
 

@@ -1,7 +1,10 @@
 from django.shortcuts import render
 
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework import authentication,permissions
+from rest_framework.generics import RetrieveAPIView,UpdateAPIView,DestroyAPIView
 
 from bookings_v2.serializers import SignUpSerializer,AppointmentSerializer
 
@@ -26,6 +29,8 @@ class SignUpView(APIView):
             return Response(data=serializer_instance.errors)
 
 class AppointmentListCreateView(APIView):
+    authentication_classes=[authentication.BasicAuthentication]
+    permission_classes=[permissions.IsAuthenticated]
 
     def get(self,request):
         qs=Appointment.objects.all()
@@ -57,6 +62,14 @@ class AppointmentListCreateView(APIView):
 
         else:
             return Response(data=serializer_instance.errors)
+
+
+class AppointmentRetrieveUpdateDeleteView(RetrieveAPIView,UpdateAPIView,DestroyAPIView):
+    authentication_classes=[authentication.BasicAuthentication]
+    permission_classes=[permissions.IsAuthenticated]
+
+    serializer_class=AppointmentSerializer
+    queryset=Appointment.objects.all()
 
     
             
